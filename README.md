@@ -24,6 +24,6 @@ verifyKey改Mirai-api-http的密码
 
 对应的，请在win-x64或者linux-x64下的config.xml修改
 
-Address中的端口
+Address中的端口（Address是完整地址，只改端口）
 
 VerifyCode中的密码
