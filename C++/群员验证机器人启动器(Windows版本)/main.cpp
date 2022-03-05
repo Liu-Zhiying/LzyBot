@@ -17,7 +17,7 @@
 WCHAR szServiceName[] = L"LzyBot";
 volatile LONG iServiceStatus = 0;
 SERVICE_STATUS_HANDLE ServiceStatusHandle;
-
+//设置信号量的安全令牌
 PSECURITY_DESCRIPTOR GetPublicMutexSecirityDescriptor()
 {
 	SID_IDENTIFIER_AUTHORITY SIA = SECURITY_WORLD_SID_AUTHORITY;
@@ -56,7 +56,7 @@ PSECURITY_DESCRIPTOR GetPublicMutexSecirityDescriptor()
 	}
 	return pSD;
 }
-
+//获取程序路径（不包括程序名）
 std::wstring GetModulePathWithoutFileName()
 {
 	WCHAR szBinPath[MAX_PATH];
@@ -194,7 +194,8 @@ int main(int argc, char** argv)
 		std::cout << "$启动器路径 u：取消注册服务" << std::endl;
 		std::cout << "$启动器路径 s：服务模式启动（请勿手动使用）" << std::endl;
 		std::cout << "首先启动MCL控制台，10s后启动机器人主程序" << std::endl;
-		HANDLE hMutex = OpenMutex(MUTEX_ALL_ACCESS, FALSE, MUTEX_NAME);
+		//检查是否有服务实例运行
+		HANDLE hMutex = OpenMutexW(MUTEX_ALL_ACCESS, FALSE, MUTEX_NAME);
 		if (hMutex)
 		{
 			std::cout << "服务模式已经启动，请关闭服务，再使用测试启动模式！" << std::endl;
