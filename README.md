@@ -1,5 +1,5 @@
 # LzyBot
-自己写的基于Mirai框架，使用Mirai.NET库的机器人程序
+自己写的基于Mirai框架，使用Mirai.NET库的机器人程序，并使用C++在Windows和Linux上各写了一个启动器
 ## 使用方法：
 1.到 [release](https://github.com/Liu-Zhiying/LzyBot/releases/tag/release) 下载 Windows x64 或者 Linux x64 包
 
