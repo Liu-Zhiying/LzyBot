@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1646417757 source:/home/lzy/Desktop/StartBot/main.cpp
+	<iostream>
+	<unistd.h>
+	<cstring>
+	<string>
+	<cstdlib>
+	<fcntl.h>
+	<sys/stat.h>
+	<semaphore.h>
+	<sys/wait.h>
+	<sys/file.h>
+	<stdio.h>
+	<time.h>
+
